@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "testAppTem/base.html" %}
+
+{% block head %}
+    <style>
+        h1,h2{
+            font-weight: 900;
+            font-size: 4rem;
+            color: red;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron" align="center">
+            <h1 align="center">Thankyou for spending time with our website!!</h1>
+            <h2 style="color: darkblue;" align="center">Please come again!!</h2>
+            <a href="/accounts/login" class="btn btn-lg btn-info">Login again</a>
+        </div>
+        </div>
+{% endblock %}

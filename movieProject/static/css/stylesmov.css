@@ -1,0 +1,92 @@
+body{
+    background-image: url(https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.jumbotron{
+    background-color: orangered;
+    color: darkblue;
+    margin-top: 20%;
+    font-family: 'Nunito', sans-serif;
+}
+h1{
+    font-size: 5rem;
+}
+a{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.formbox{
+    text-align: center;
+    margin-top:150px;
+    font-size:2rem;
+    color: white;
+    font-weight: bold;
+    border: 10px solid yellow;
+    padding-top: 40px;
+    background: lightcoral;
+}
+#id_hero{
+    position: relative;
+    left: 52px;
+}
+#id_IMDB{
+    position: relative;
+    left: 48px;
+}
+label[for="id_hero"]{
+    position: relative;
+    left: 50px;
+}
+label[for="id_IMDB"]{
+    position: relative;
+    left: 46px;
+}
+table{
+    border: 20px groove darkgreen;
+    color: lightseagreen;
+    background-color:black;
+    font-size: 2rem;
+    font-weight: 700;
+}
+th{
+    border: 10px groove orangered;
+}
+td{
+    border: 10px groove red;
+}
+.list{
+    color: crimson;
+    font-style: italic;
+}
+#title{
+    background-image: linear-gradient(aqua, purple, darkblue, green);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

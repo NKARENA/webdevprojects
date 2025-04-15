@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "testAppTem/base.html" %}
+
+{% block head %}
+    <style>
+        h1,h2{
+            font-weight: 900;
+            font-size: 4rem;
+            color: darkblue;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron" align="center">
+            <h1 align="center">SignUp here:</h1>
+            <form method="post">
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" value="Sign Up" class="btn btn-success btn-lg">
+            </form>
+        </div>
+        </div>
+{% endblock %}
