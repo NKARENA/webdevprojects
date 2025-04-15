@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "testAppTem/base.html" %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Employee information update form</h1><hr>
+        <form method='post'>
+            {%csrf_token%}
+            Employee Number: <input type="number" name="enum" value={{employee.enum}}><br><br>
+            Employee Name: <input type="text" name="ename" value={{employee.ename}}><br><br>
+            Employee Salary: <input type="number" name="esal" value={{employee.esal}}><br><br>
+            Employee Address: <input type="text" name="eaddr" value={{employee.eaddr}}><br><br><br>
+            <input type="submit" value="Update Record" class="btn btn-lg btn-warning">
+        </form>
+    </div>
+{% endblock %}

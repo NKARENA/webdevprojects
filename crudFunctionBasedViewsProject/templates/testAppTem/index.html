@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "testAppTem/base.html" %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1><u>Employee Information Dashboard</u></h1><br><br>
+            <table border=4>
+        <thead>
+            <th>Employee Name</th>
+            <th>Employee Number</th>
+            <th>Employee Salary</th>
+            <th>Employee Address</th>
+            <th>Actions</th>
+        </thead>
+        {% if employees %}
+            {% for e in employees %}
+                <tr align=center>
+                    <td>{{e.enum}}</td>
+                    <td>{{e.ename}}</td>
+                    <td>{{e.esal}}</td>
+                    <td>{{e.eaddr}}</td>
+                    <td><a href="/update/{{e.id}}" class="btn btn-sm btn-dark">Update</a> <a href="/delete/{{e.id}}" class="btn btn-sm btn-info">Delete</a></td>
+                </tr>
+            {% endfor %}
+        {% else %}
+                <p>There is no data...</p>
+        {% endif %}
+            </table><br><br>
+            <a href="/insertEmployee" class="btn btn-lg btn-success">Insert New Employee</a>
+    </div>
+            {% endblock %} 

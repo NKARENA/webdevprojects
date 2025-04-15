@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "testAppTem/base.html" %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Employee insertion form</h1><hr>
+        <form method='post'>
+            <table border=3>
+                {{form}}
+            </table>
+            {%csrf_token%}<br><br>
+            <input type="submit" value="Insert" class="btn btn-lg btn-danger">
+        </form>
+    </div>
+{% endblock %}
