@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+{% extends 'testapp/base.html' %}
+
+{% block body_block %}
+    <h1>{{company.name}} Information</h1><hr>
+        <h2>Location: {{company.location}}</h2>
+        <h2>CEO: {{company.ceo}}</h2>
+
+        <a class="btn btn-lg btn-warning"href="/update/{{company.pk}}">Change Info</a>
+        <a class="btn btn-lg btn-warning"href="/delete/{{company.pk}}">Delete Info</a>
+        <a class="btn btn-lg btn-danger"href="/">Home</a>
+{% endblock %}
+
