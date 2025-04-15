@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Quiz</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Sansita+Swashed:wght@300&family=Sometype+Mono&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href={% static "css/quizPage_style.css" %}></link>
+   </head>
+   <body>
+      <h1 id="quizHeading">{{quiz.topic}} QUIZ</h1>
+      <br><br><br>
+      <form action="/scores/" method="POST">
+
+      	{% csrf_token %}
+         <div id="q1">
+            <h2>1. {{quiz.question1}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q1o1" name="ques1" value="{{quiz.option_1_q1}}" onchange="handleRadioChange('ques1',this)">
+                  <label for=q1o1>{{quiz.option_1_q1}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q1o2" name="ques1" value="{{quiz.option_2_q1}}" onchange="handleRadioChange('ques1',this)">
+                  <label for=q1o1>{{quiz.option_2_q1}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q1o3" name="ques1" value="{{quiz.option_3_q1}}" onchange="handleRadioChange('ques1',this)">
+                  <label for=q1o1>{{quiz.option_3_q1}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q1o4" name="ques1" value="{{quiz.option_4_q1}}" onchange="handleRadioChange('ques1',this)">
+                  <label for=q1o1>{{quiz.option_4_q1}}</label>
+               </li>
+               <li>
+               		<p hidden id="an1">{{quiz.answer_for_q1}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>
+
+
+         <div id="q2">
+            <h2>2. {{quiz.question2}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q2o1" name="ques2" value="{{quiz.option_1_q2}}" onchange="handleRadioChange('ques2',this)">
+                  <label for=q2o1>{{quiz.option_1_q2}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q2o2" name="ques2" value="{{quiz.option_2_q2}}" onchange="handleRadioChange('ques2',this)">
+                  <label for=q2o2>{{quiz.option_2_q2}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q2o3" name="ques2" value="{{quiz.option_3_q2}}" onchange="handleRadioChange('ques2',this)">
+                  <label for=q2o3>{{quiz.option_3_q2}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q2o4" name="ques2" value="{{quiz.option_4_q2}}" onchange="handleRadioChange('ques2',this)">
+                  <label for=q2o4>{{quiz.option_4_q2}}</label>
+               </li>
+               <li>
+               		<p hidden id="an2">{{quiz.answer_for_q2}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>
+
+
+         <div id="q3">
+            <h2>3. {{quiz.question3}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q3o1" name="ques3" value="{{quiz.option_1_q3}}" onchange="handleRadioChange('ques3',this)">
+                  <label for=q3o1>{{quiz.option_1_q3}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q3o2" name="ques3" value="{{quiz.option_2_q3}}" onchange="handleRadioChange('ques3',this)">
+                  <label for=q3o2>{{quiz.option_2_q3}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q3o3" name="ques3" value="{{quiz.option_3_q3}}" onchange="handleRadioChange('ques3',this)"> 
+                  <label for=q3o3>{{quiz.option_3_q3}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q3o4" name="ques3" value="{{quiz.option_4_q3}}" onchange="handleRadioChange('ques3',this)">
+                  <label for=q3o4>{{quiz.option_4_q3}}</label>
+               </li>
+               <li>
+               		<p hidden id="an3">{{quiz.answer_for_q3}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>
+
+
+         <div id="q4">
+            <h2>4. {{quiz.question4}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q4o1" name="ques4" value="{{quiz.option_1_q4}}" onchange="handleRadioChange('ques4',this)">
+                  <label for=q4o1>{{quiz.option_1_q4}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q4o2" name="ques4" value="{{quiz.option_2_q4}}" onchange="handleRadioChange('ques4',this)">
+                  <label for=q4o2>{{quiz.option_2_q4}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q4o3" name="ques4" value="{{quiz.option_3_q4}}" onchange="handleRadioChange('ques4',this)">
+                  <label for=q4o3>{{quiz.option_3_q4}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q4o4" name="ques4" value="{{quiz.option_4_q4}}" onchange="handleRadioChange('ques4',this)">
+                  <label for=q4o4>{{quiz.option_4_q4}}</label>
+               </li>
+               <li>
+               		<p hidden id="an4">{{quiz.answer_for_q4}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>
+
+
+         <div id="q5">
+            <h2>5. {{quiz.question5}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q5o1" name="ques5" value="{{quiz.option_1_q5}}" onchange="handleRadioChange('ques5',this)">
+                  <label for=q5o1>{{quiz.option_1_q5}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q5o2" name="ques5" value="{{quiz.option_2_q5}}" onchange="handleRadioChange('ques5',this)"> 
+                  <label for=q5o2>{{quiz.option_2_q5}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q5o3" name="ques5" value="{{quiz.option_3_q5}}" onchange="handleRadioChange('ques5',this)">
+                  <label for=q5o3>{{quiz.option_3_q5}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q5o4" name="ques5" value="{{quiz.option_4_q5}}" onchange="handleRadioChange('ques5',this)">
+                  <label for=q5o4>{{quiz.option_4_q5}}</label>
+               </li>
+               <li>
+               		<p hidden id="an5">{{quiz.answer_for_q5}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>
+
+
+         <div id="q6">
+            <h2>6. {{quiz.question6}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q6o1" name="ques6" value="{{quiz.option_1_q6}}" onchange="handleRadioChange('ques6',this)">
+                  <label for=q6o1>{{quiz.option_1_q6}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q6o2" name="ques6" value="{{quiz.option_2_q6}}" onchange="handleRadioChange('ques6',this)">
+                  <label for=q6o2>{{quiz.option_2_q6}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q6o3" name="ques6" value="{{quiz.option_3_q6}}" onchange="handleRadioChange('ques6',this)">
+                  <label for=q6o3>{{quiz.option_3_q6}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q6o4" name="ques6" value="{{quiz.option_4_q6}}" onchange="handleRadioChange('ques6',this)">
+                  <label for=q6o4>{{quiz.option_4_q6}}</label>
+               </li>
+               <li>
+               		<p hidden id="an6">{{quiz.answer_for_q6}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>	
+
+
+         <div id="q7">
+            <h2>7. {{quiz.question7}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q7o1" name="ques7" value="{{quiz.option_1_q7}}" onchange="handleRadioChange('ques7',this)">
+                  <label for=q7o1>{{quiz.option_1_q7}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q7o2" name="ques7" value="{{quiz.option_2_q7}}" onchange="handleRadioChange('ques7',this)">
+                  <label for=q7o2>{{quiz.option_2_q7}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q7o3" name="ques7" value="{{quiz.option_3_q7}}" onchange="handleRadioChange('ques7',this)">
+                  <label for=q7o3>{{quiz.option_3_q7}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q7o4" name="ques7" value="{{quiz.option_4_q7}}" onchange="handleRadioChange('ques7',this)">
+                  <label for=q7o4>{{quiz.option_4_q7}}</label>
+               </li>
+               <li>
+               		<p hidden id="an7">{{quiz.answer_for_q7}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>    
+
+
+         <div id="q8">
+            <h2>8. {{quiz.question8}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q8o1" name="ques8" value="{{quiz.option_1_q8}}" onchange="handleRadioChange('ques8',this)">
+                  <label for=q8o1>{{quiz.option_1_q8}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q8o2" name="ques8" value="{{quiz.option_2_q8}}" onchange="handleRadioChange('ques8',this)">
+                  <label for=q8o2>{{quiz.option_2_q8}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q8o3" name="ques8" value="{{quiz.option_3_q8}}" onchange="handleRadioChange('ques8',this)">
+                  <label for=q8o3>{{quiz.option_3_q8}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q8o4" name="ques8" value="{{quiz.option_4_q8}}" onchange="handleRadioChange('ques8',this)">
+                  <label for=q8o4>{{quiz.option_4_q8}}</label>
+               </li>
+               <li>
+               		<p hidden id="an8">{{quiz.answer_for_q8}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>	
+
+
+         <div id="q9">
+            <h2>9. {{quiz.question9}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q9o1" name="ques9" value="{{quiz.option_1_q9}}" onchange="handleRadioChange('ques9',this)">
+                  <label for=q9o1>{{quiz.option_1_q9}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q9o2" name="ques9" value="{{quiz.option_2_q9}}" onchange="handleRadioChange('ques9',this)">
+                  <label for=q9o2>{{quiz.option_2_q9}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q9o3" name="ques9" value="{{quiz.option_3_q9}}" onchange="handleRadioChange('ques9',this)">
+                  <label for=q9o3>{{quiz.option_3_q9}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q9o4" name="ques9" value="{{quiz.option_4_q9}}" onchange="handleRadioChange('ques9',this)">
+                  <label for=q9o4>{{quiz.option_4_q9}}</label>
+               </li>
+               <li>
+               		<p hidden id="an9">{{quiz.answer_for_q9}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>
+
+
+         <div id="q10">
+            <h2>10. {{quiz.question10}}</h2>
+            <ul class="containsButtons">
+               <li>
+                  <input type="radio" id="q10o1" name="ques10" value="{{quiz.option_1_q10}}" onchange="handleRadioChange('ques10',this)">
+                  <label for=q10o1>{{quiz.option_1_q10}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q10o2" name="ques10" value="{{quiz.option_2_q10}}" onchange="handleRadioChange('ques10',this)">
+                  <label for=q10o2>{{quiz.option_2_q10}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q10o3" name="ques10" value="{{quiz.option_3_q10}}" onchange="handleRadioChange('ques10',this)">
+                  <label for=q10o3>{{quiz.option_3_q10}}</label>
+               </li>
+               <li>
+                  <input type="radio" id="q10o4" name="ques10" value="{{quiz.option_4_q10}}" onchange="handleRadioChange('ques10',this)">
+                  <label for=q10o4>{{quiz.option_4_q10}}</label>
+               </li>
+               <li>
+               		<p hidden id="an10">{{quiz.answer_for_q10}}</p>
+               </li>
+            </ul>
+         </div>
+         <br><br>
+
+
+         <center><input type="submit" name="SUBMIT" class="btn btn-outline-light"></center>
+      </form><br><br>
+      <div id="btn-div">
+         <center><button onclick="refreshPage()" class="btn btn-outline-warning">Re-Attempt</button></center></div>
+
+      <!-- <script src="./../../static/js/quizLogic.js"></script> -->
+      <script src="{% static "js/quizLogic.js" %}"></script>
+      <!-- <script type="module" src="{% static "js/quizLogic.js" %}"></script> -->
+   </body>
+</html>

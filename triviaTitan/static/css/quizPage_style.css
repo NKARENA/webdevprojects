@@ -1,0 +1,45 @@
+		
+body {
+  padding: 0;
+  margin: 5pc;
+  font-family: DM Sans;
+  background-color: #202225;
+  color: white;
+}
+
+ul {
+	list-style: none;
+}
+
+h2 {
+	font-size: 2pc;
+}
+
+#quizHeading {
+	text-align: center;
+	border: 2pc groove white;
+	border-radius: 10px;
+	margin: 20px;
+	font-size: 5pc;
+}
+
+.containsButtons {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		font-weight: 1000;
+}
+
+label {
+	font-size: 1.5pc;
+	color: lightcoral;
+}
+
+input[type=submit] {
+	font-size: 1.5pc;
+	font-weight: 1000;
+}
+
+/*#btn-div {
+	margin-bottom: 20pc;
+}*/

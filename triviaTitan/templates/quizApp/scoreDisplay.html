@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="grey darken-3 white-text">
+	<center>
+    
+    
+  
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><h3>Quiz Results</h3></span>
+    <div class="card-panel teal "><h2><p>Your Score: <span id="userScore"></span> /10 </p></h2></div>
+        </div>
+      </div>
+
+    </center>
+
+    <script>
+        // Retrieve the score from local storage
+        const userScore = localStorage.getItem('userScore');
+
+        // Display the score on the page
+        document.getElementById('userScore').innerText = userScore;
+    </script>
+</body>
+</html>

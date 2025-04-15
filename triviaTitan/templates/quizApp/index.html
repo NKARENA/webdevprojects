@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trivia Titan</title>
+       <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="pre connect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Sansita+Swashed:wght@300&family=Sometype+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href={% static "css/firstPageStyle.css" %}></link>
+</head>
+
+<body>
+
+  <header>
+    <ul id="nav">
+      <li> <img src="{% static "images/triviatitanlogo.png" %}"
+          alt="logo"> </li>
+      <li>
+        <h1 id="title" > <strong>TRIVIA TITAN</strong> </h1>
+      </li>
+      <li>
+        <h2> <a href="/createQuiz" id ="create-quiz">Create Your Own Quiz</a></h2>
+      </li>
+    </ul>
+  </header>
+  <div id ="main">
+    <div id="slogan">
+
+      
+        <center>
+        <div id="ct"> 
+          <div class="corner "id="left_top"></div> 
+          <div class="corner" id="left_bottom"></div> 
+          <div class="corner" id="right_top"></div> <div class="corner" id="right_bottom"></div>
+            <span>WELCOME TO</span>
+            <blockquote> <p><i>&ldquo;Trivia
+            Titan: Apex Of Knowledge Entertainment&rdquo; </i></p> </blockquote> 
+        </div>
+        </center>
+
+        <div>
+        <center><h1 id="topicTheHeading" >TOPICS</h1></center>
+
+        <div>
+          <ul id="trending-quizzes">
+            {% if quiz_list %}
+                {% for qu in quiz_list %}
+                    <li>
+                      <h2><a class="selectTopic" href="/quizPage/{{qu.id}}">{{qu.topic}}</a></h2>
+                    </li>
+                {% endfor %}
+          </ul>
+            {% else %}
+              <h2>No quiz available! Please create one attend quiz..</h2>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="foot" >
+    <div id="foot_div">
+      <hr>
+      <br>
+      <div id='foot-items'>
+      <ul id="about">
+        <li><h2>About us</h2></li>
+        <li><h3>We are a non-profitable group</h3></li>
+        <li><h3>We want to change the education system</h3></li>
+        <li><h3>We are reformers</h3></li>
+      </ul>
+      <ul id="resources">
+        <li><h2>Resources (For quiz prep)</h2></li>
+        <li><h3><a href="https://www.google.com" class="blue-colour">Google</a></h3></li>
+        <li><h3><a href="https://www.chat.openai.com" class="blue-colour"> ChatGPT</a></h3></li>
+        <li><h3><a href="https://www.yahoo.com" class="blue-colour">Yahoo</a></h3></li>
+      </ul>
+      <ul id="partners">
+        <li><h2>Partners</h2></li>
+        <li><h3>R.S. Nidesh Kaarthik</h3></li>
+      </ul>
+      <ul id="social">
+        <li><h2>Reach us out at</h2></li>
+        <li><img width="48" height="48" src="https://img.icons8.com/color/48/twitter--v1.png" alt="twitter--v1"/></li>
+        <li><img width="48" height="48" src="https://img.icons8.com/color/48/linkedin-circled--v1.png" alt="linkedin-circled--v1"/></li>
+        <li><img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/></li>
+      </ul>
+        </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
